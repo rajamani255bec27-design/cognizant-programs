@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin >> n; 
+    int arr[1000]; 
+    int uniqueCount = 0;
+    for (int i = 0; i < n; i++) {
+        int current;
+        cin >> current;
+        bool found = false;
+        for (int j = 0; j < uniqueCount; j++) {
+            if (arr[j] == current) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            arr[uniqueCount] = current;
+            uniqueCount++;
+        }
+    }
+    for (int i = 0; i < uniqueCount; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
