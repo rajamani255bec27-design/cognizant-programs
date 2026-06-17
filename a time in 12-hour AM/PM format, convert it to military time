@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int hh, mm, ss;
+    char colon1, colon2, am_pm, m;
+    if (cin >> hh >> colon1 >> mm >> colon2 >> ss >> am_pm >> m) {
+        if (am_pm == 'P' || am_pm == 'p') {
+            if (hh != 12) {
+                hh = hh + 12;
+            }
+        }
+        else if (am_pm == 'A' || am_pm == 'a') {
+            if (hh == 12) {
+                hh = 0;
+            }
+        }
+        if (hh < 10) {
+            cout << "0";
+        }
+        cout << hh << ":";
+        if (mm < 10) {
+            cout << "0";
+        }
+        cout << mm << ":";
+        if (ss < 10) {
+            cout << "0";
+        }
+        cout << ss << endl;
+    }
+    return 0;
+}
